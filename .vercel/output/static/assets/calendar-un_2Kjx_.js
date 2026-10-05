@@ -1,0 +1,1 @@
+import{x as e}from"./store-3INE-wIY.js";import{t}from"./calendar-board-JsFuUuoJ.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as component};

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SDSP",
+      "hasCanvas": false,
+      "bodyTextLen": 1681,
+      "bodyTextHash": "62afa676fd0474831b9c6f4e26da3bcbf0efd2af725c49982c03403b1e84f2d8",
+      "bodyTextPrefix": "Skip to content SDSP શ્રી દેવદમનલાલ Home ઘર Calendar કૅલેન્ડર Se",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SDSP",
+      "hasCanvas": false,
+      "bodyTextLen": 1570,
+      "bodyTextHash": "0ded3719965dafc1bb14c1906f9d8f1322a17ec97d298ae2e10e666f2eb685a1",
+      "bodyTextPrefix": "Skip to content SDSP SHRI DEVDAMAN SEVA PLANNER SDSP શ્રી દેવદમન",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

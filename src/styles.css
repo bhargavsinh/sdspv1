@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Outfit", "Noto Sans Gujarati", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Noto Serif Gujarati", ui-serif, Georgia, serif;
+  --font-gujarati: "Noto Sans Gujarati", "Outfit", sans-serif;
+
+  --color-background: var(--sdsp-bg);
+  --color-foreground: var(--sdsp-fg);
+  --color-card: var(--sdsp-card);
+  --color-card-foreground: var(--sdsp-fg);
+  --color-popover: var(--sdsp-popover);
+  --color-popover-foreground: var(--sdsp-fg);
+  --color-primary: var(--sdsp-primary);
+  --color-primary-foreground: var(--sdsp-primary-fg);
+  --color-secondary: var(--sdsp-secondary);
+  --color-secondary-foreground: var(--sdsp-fg);
+  --color-muted: var(--sdsp-muted);
+  --color-muted-foreground: var(--sdsp-muted-fg);
+  --color-accent: var(--sdsp-accent);
+  --color-accent-foreground: var(--sdsp-fg);
+  --color-destructive: var(--sdsp-danger);
+  --color-destructive-foreground: var(--sdsp-primary-fg);
+  --color-border: var(--sdsp-border);
+  --color-input: var(--sdsp-border);
+  --color-ring: var(--sdsp-primary);
+  --color-complete: var(--sdsp-complete);
+  --color-skip: var(--sdsp-skip);
+  --color-progress: var(--sdsp-progress);
+  --color-ivory: var(--sdsp-ivory);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-glass: var(--sdsp-shadow);
+}
+
+:root {
+  --sdsp-bg: #f3ece3;
+  --sdsp-fg: #1c1612;
+  --sdsp-card: #faf6f0;
+  --sdsp-popover: #fffaf4;
+  --sdsp-primary: #c2410c;
+  --sdsp-primary-fg: #fff8f0;
+  --sdsp-secondary: #ebe3d6;
+  --sdsp-muted: #e7dfd3;
+  --sdsp-muted-fg: #6f655c;
+  --sdsp-accent: #efe6d8;
+  --sdsp-danger: #b42318;
+  --sdsp-border: color-mix(in oklab, #1c1612 12%, transparent);
+  --sdsp-complete: #3f6b4b;
+  --sdsp-skip: #9a6b2f;
+  --sdsp-progress: #c2410c;
+  --sdsp-ivory: #f4efe8;
+  --sdsp-shadow:
+    0 0 0 1px color-mix(in oklab, #1c1612 8%, transparent),
+    0 10px 28px color-mix(in oklab, #1c1612 8%, transparent);
+  --sdsp-wash: color-mix(in oklab, #c2410c 7%, transparent);
+  color-scheme: light;
+}
+
+.dark {
+  --sdsp-bg: #14110e;
+  --sdsp-fg: #f4efe8;
+  --sdsp-card: #1c1814;
+  --sdsp-popover: #221c18;
+  --sdsp-primary: #d4572a;
+  --sdsp-primary-fg: #fff8f0;
+  --sdsp-secondary: #2a241f;
+  --sdsp-muted: #2a241f;
+  --sdsp-muted-fg: #a89f94;
+  --sdsp-accent: #2e2722;
+  --sdsp-danger: #e05d4f;
+  --sdsp-border: color-mix(in oklab, #f4efe8 12%, transparent);
+  --sdsp-complete: #8fbf9a;
+  --sdsp-skip: #d4a574;
+  --sdsp-progress: #e07a4a;
+  --sdsp-ivory: #f4efe8;
+  --sdsp-shadow: 0 0 0 1px color-mix(in oklab, #f4efe8 10%, transparent);
+  --sdsp-wash: color-mix(in oklab, #d4572a 14%, transparent);
+  color-scheme: dark;
+}
+
+html[data-size="sm"] {
+  font-size: 15px;
+}
+html[data-size="md"] {
+  font-size: 16px;
+}
+html[data-size="lg"] {
+  font-size: 18px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  }
+}
+
+.glass {
+  background: color-mix(in oklab, var(--color-card) 78%, transparent);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  box-shadow: var(--shadow-glass);
+}
+
+.temple-wash {
+  background-image:
+    radial-gradient(1200px 480px at 12% -10%, var(--sdsp-wash), transparent 55%),
+    radial-gradient(900px 420px at 110% 0%, color-mix(in oklab, var(--color-primary) 8%, transparent), transparent 50%);
+}
+
+.gu {
+  font-family: var(--font-gujarati), var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
